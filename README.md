@@ -11,7 +11,23 @@
 [![Made With Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-red.svg)](#)
 
 
+## Imagini
 
+### Prezentare 1
+
+![Prezentare 1](docs/prezentare1.png)
+
+### Prezentare 2
+
+![Prezentare 2](docs/prezentare2.png)
+
+### Prezentare 3
+
+![Prezentare 3](docs/prezentare3.png)
+
+### Prezentare 4
+
+![Prezentare 4](docs/prezentare4.png)
 
 Un proiect complex ce transformă un ESP32 într-un radio FM inteligent, controlabil printr-o interfață web modernă și afișaj TFT rotund, cu suport pentru control fizic (modul TM1638), conexiuni Wi-Fi și RDS.
 
