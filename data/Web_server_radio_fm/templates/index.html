@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio FM ESP32</title>
+    <link rel="stylesheet" href="/Web_server_radio_fm/static/style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Control Radio FM ESP32</h1>
+        </header>
+        
+        <div class="main-content">
+            <!-- Panelul stâng pentru control radio -->
+            <div class="control-panel">
+                <h2>Control Radio</h2>
+                
+                <!-- Slider pentru selectarea frecvenței -->
+                <div class="control-item">
+                    <label for="frequencySlider">FM <span id="frequencyLabel">87.0 MHz</span></label>
+                    <input type="range" id="frequencySlider" min="87" max="108" step="0.1" value="87">
+                </div>
+                
+                <!-- Slider pentru volum -->
+                <div class="control-item">
+                    <label for="volumeSlider">Volum: <span id="volumeLabel">50</span></label>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="50" step="1">
+                </div>
+                
+                <!-- Butoane de control -->
+                <div class="control-buttons">
+                    <button onclick="changeVolume('up')">Volume Up</button>
+                    <button onclick="changeVolume('down')">Volume Down</button>
+                    <button onclick="toggleMute()">Mute/Unmute</button>
+                    <button onclick="changeFrequency('up')">Frequency Up</button>
+                    <button onclick="changeFrequency('down')">Frequency Down</button>
+                </div>
+
+                
+            </div>
+
+            <!-- Panelul central pentru tabelul de frecvențe -->
+            <div class="data-panel">
+                <!-- STATUS-->
+                <div id="radioStatusContainer">
+                    <h2>📻 Status Radio</h2>
+                    <table id="radioStatusTable">
+                        <tr>
+                            <td class="icon" data-tooltip="Frecvență">📶</td>
+                            <td><strong>Frecvență:</strong></td>
+                            <td id="frequency">101.00 MHz</td>
+                        </tr>
+                        <tr>
+                            <td class="icon" data-tooltip="Mod">🔊</td>
+                            <td><strong>Mod:</strong></td>
+                            <td id="mode">MONO</td>
+                        </tr>
+                        <tr>
+                            <td class="icon" data-tooltip="SNR (Raport Semnal-Zgomot)">📡</td>
+                            <td><strong>SNR:</strong></td>
+                            <td id="snr">7 dB</td>
+                        </tr>
+                        <tr>
+                            <td class="icon" data-tooltip="RSSI (Putere Semnal)">🚀</td>
+                            <td><strong>RSSI:</strong></td>
+                            <td id="rssi">12 dBuV</td>
+                        </tr>
+                        <tr>
+                            <td class="icon" data-tooltip="Status">ℹ️</td>
+                            <td><strong>Status:</strong></td>
+                            <td id="status">FM</td>
+                        </tr>
+                        <tr>
+                            <td class="icon" data-tooltip="RDS (Program Service Name)">📻</td>
+                            <td><strong>RDS:</strong></td>
+                            <td id="rds">N/A</td>
+                        </tr>
+                        <tr>
+                            <td class="icon" data-tooltip="UTC Time">🕒</td>
+                            <td><strong>UTC:</strong></td>
+                            <td id="utc">N/A</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <table id="frequencyTable">
+                    <thead>
+                        <tr id="tableHeader"></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- Panelul drept pentru inserarea de noi date -->
+            <div class="form-panel">
+                <h2>Adăugare Date</h2>
+                
+                <!-- Formular pentru adăugarea de noi posturi FM -->
+                <form id="radioForm" action="/saveCSVData" method="POST">
+                    <div class="form-item">
+                        <label for="radioName">Nume Radio</label>
+                        <input type="text" id="radioName" name="radioName" placeholder="Ex: Radio ZU" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="radioFrequency">Frecvență FM (MHz)</label>
+                        <input type="text" id="radioFrequency" name="radioFrequency" placeholder="Ex: 89.4" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="radioType">Tip Radio</label>
+                        <input type="text" id="radioType" name="radioType" placeholder="Ex: Stiri, Muzica, Discutii" required>
+                    </div>
+                    <button type="submit">Adaugă Post FM</button>
+                </form>
+
+                <!-- Formular pentru adăugarea de noi date Wi-Fi -->
+                <form id="wifiForm" action="/saveCSVData_wifi" method="POST">
+                    <div class="form-item">
+                        <label for="apartment">SSID</label>
+                        <input type="text" id="apartment" name="apartment" placeholder="Ex: AUTOVEHICUL" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="wifiPassword">Parolă Wi-Fi</label>
+                        <input type="text" id="wifiPassword" name="wifiPassword" placeholder="Ex: DACIA_logan_01" required>
+                    </div>
+                    <button type="submit">Adaugă Date Wi-Fi</button>
+                </form>
+                <!-- Mesaj de confirmare -->
+                <div id="confirmationMessage" class="confirmation-message">Datele au fost salvate cu succes!</div>
+
+
+
+
+
+
+
+
+
+
+            
+            
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="/Web_server_radio_fm/static/script.js"></script>
+</body>
+</html>

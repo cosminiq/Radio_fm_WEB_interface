@@ -1,0 +1,321 @@
+/* Stiluri generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #231e1e; /* Fundal negru */
+    color: #ffffff; /* Text alb */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4c7bc8; /* Albastru neon pentru titlu */
+}
+
+/* Structura principală */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Panelul de control radio */
+.control-panel {
+    width: 25%;
+    background-color: #333333; /* Gri metalic */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.control-panel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4c7bc8; /* Albastru neon pentru titluri */
+}
+
+.control-item {
+    margin-bottom: 15px;
+}
+
+.control-item label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #4c7bc8; /* Albastru neon pentru etichete */
+}
+
+.control-item input[type="range"] {
+    width: 100%;
+    background-color: #1f1f1f; /* Gri mai închis */
+    border-radius: 8px;
+    height: 8px;
+    outline: none;
+}
+
+.control-item input[type="range"]:focus {
+    box-shadow: 0 0 5px #4c7bc8; /* Albastru neon la focus */
+}
+
+.control-item input[type="range"]::-webkit-slider-runnable-track {
+    background: #2f0f3c; /* Albastru neon */
+}
+
+.control-item input[type="range"]::-webkit-slider-thumb {
+    background: #2f0f3c; /* Albastru neon */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+/* Butoane de control */
+.control-buttons button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #2f0f3c; /* Mov neon pentru butoane */
+    border: none;
+    color: #ffffff; /* Text alb pe fundal mov */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.control-buttons button:hover {
+    background-color: #7b00b0; /* Mov mai închis la hover */
+}
+
+.control-buttons button:active {
+    background-color: #5a0080; /* Mov și mai închis la click */
+}
+
+
+
+
+
+
+
+
+/* Panelul de date */
+
+
+
+.data-panel {
+    width: 50%; /* Lățimea panelului */
+    background-color: #333333; /* Gri metalic */
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto; /* Adaugă derulare orizontală dacă este necesar */
+}
+
+#frequencyTable {
+    width: 100%; /* Ia întreaga lățime a panelului */
+    max-width: 100%; /* Nu depășește lățimea panelului */
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed; /* Forțează tabelul să respecte lățimile coloanelor */
+}
+
+#frequencyTable th, #frequencyTable td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #555;
+    font-size: clamp(12px, 2vw, 16px); /* Scalare font în funcție de lățimea ecranului */
+    white-space: nowrap; /* Previne împărțirea textului pe mai multe linii */
+    overflow: hidden; /* Ascunde textul care depășește celula */
+    text-overflow: ellipsis; /* Adaugă "..." pentru textul tăiat */
+}
+
+#frequencyTable th {
+    background-color: #1f1f1f; /* Gri mai închis pentru antet */
+    color: #4c7bc8; /* Albastru neon pentru antet */
+}
+
+#frequencyTable td {
+    background-color: #333333; /* Gri metalic */
+    color: #ffffff; /* Text alb */
+}
+
+
+
+
+
+
+
+
+
+
+/* Panelul de formular */
+.form-panel {
+    width: 25%;
+    background-color: #333333; /* Gri metalic */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-panel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #4c7bc8; /* Albastru neon pentru titluri */
+}
+
+.form-item {
+    margin-bottom: 15px;
+}
+
+.form-item label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #4c7bc8; /* Albastru neon pentru etichete */
+}
+
+.form-item input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #1f1f1f; /* Gri mai închis */
+    color: #ffffff; /* Text alb */
+}
+
+.form-item input[type="text"]:focus {
+    outline: none;
+    border-color: #4c7bc8; /* Albastru neon la focus */
+}
+
+/* Buton general */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2f0f3c; /* Mov neon pentru butoane */
+    border: none;
+    color: #ffffff; /* Text alb pe fundal mov */
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7b00b0; /* Mov mai închis la hover */
+}
+
+button:active {
+    background-color: #5a0080; /* Mov și mai închis la click */
+}
+
+
+
+/* Panelul de date */
+#frequencyTable {
+    width: 100%;
+    border-collapse: collapse; /* Asigură că bordurile sunt unite */
+    margin-top: 20px;
+    border: 2px solid #c60eb1; /* Bordură portocalie pentru tabel */
+}
+
+#frequencyTable th, #frequencyTable td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #c60eb1; /* Bordură portocalie pentru celule */
+}
+
+
+
+
+
+
+
+/* Panelul de status */
+
+/* Panelul de status integrat în data-panel */
+#radioStatusContainer {
+    border: 2px solid #c60eb1; /* Bordură portocalie pentru coerență */
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #333333; /* Fundal gri metalic */
+    width: 100%; /* Ia întreaga lățime a panelului */
+    text-align: center;
+    margin-bottom: 20px; /* Spațiu între status și tabel */
+}
+
+#radioStatusContainer h2 {
+    font-size: 1.5rem; /* Coerență cu titlurile din data-panel */
+    color: #4c7bc8; /* Albastru neon pentru titlu */
+    margin-bottom: 10px;
+}
+
+#radioStatus {
+    font-size: 1rem; /* Coerență cu textul din data-panel */
+    color: #ffffff; /* Text alb */
+}
+
+
+/* Stiluri pentru iconițe */
+.icon {
+    font-size: 24px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Tooltip */
+.icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+.icon:hover {
+    transform: scale(1.2);
+    color: #ff9800; /* Schimbă culoarea la hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adaugă umbră la hover */
+}
+/* Afișează tooltip-ul la hover */
+.icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Stiluri pentru mesajul de confirmare */
+.confirmation-message {
+    display: none; /* Ascuns inițial */
+    color: white;
+    background-color: green;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
