@@ -1,5 +1,18 @@
 # 📻 ESP32 Radio FM Web Server
 
+
+
+[![Platform](https://img.shields.io/badge/platform-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
+[![Language](https://img.shields.io/badge/language-C++-blue.svg)](https://en.cppreference.com/)
+[![Web Control](https://img.shields.io/badge/web-control-green.svg)](#)
+[![Wi-Fi](https://img.shields.io/badge/wi--fi-enabled-brightgreen.svg)](#)
+[![License](https://img.shields.io/github/license/<username>/esp32-radio-fm.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-success.svg)](#)
+[![Made With Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-red.svg)](#)
+
+
+
+
 Un proiect complex ce transformă un ESP32 într-un radio FM inteligent, controlabil printr-o interfață web modernă și afișaj TFT rotund, cu suport pentru control fizic (modul TM1638), conexiuni Wi-Fi și RDS.
 
 ---
